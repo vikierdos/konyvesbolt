@@ -1,0 +1,137 @@
+.tablazat tbody tr {
+  background-color: var(--color-surface);
+  transition: background-color 0.18s ease, box-shadow 0.18s ease;
+}
+
+.tablazat tbody tr:nth-child(even) {
+  background-color: var(--color-surface-muted);
+}
+
+.tablazat tbody tr:hover {
+  background-color: #eee0d1;
+}
+
+.tablazat td {
+  padding: 0.95rem 1.1rem;
+  overflow-wrap: anywhere;
+  text-align: left;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.tablazat tbody tr:last-child td {
+  border-bottom: 0;
+}
+
+.tablazat td:first-child {
+  font-weight: 700;
+  color: var(--color-primary-dark);
+}
+
+.tablazat td:nth-child(3),
+.tablazat td:nth-child(4),
+.tablazat td:last-child {
+  text-align: center;
+}
+
+.tablazat td button {
+  min-height: 2.25rem;
+  padding: 0.5rem 0.85rem;
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: #ffffff;
+  cursor: pointer;
+  background-color: var(--color-danger);
+  border: 0;
+  border-radius: 6px;
+  box-shadow: 0 2px 6px rgb(125 48 42 / 18%);
+  transition: background-color 0.18s ease, box-shadow 0.18s ease, transform 0.18s ease;
+}
+
+.tablazat td button:hover {
+  background-color: var(--color-danger-dark);
+  box-shadow: 0 4px 10px rgb(125 48 42 / 24%);
+  transform: translateY(-1px);
+}
+
+.tablazat td button:active {
+  transform: translateY(0);
+}
+
+@media (max-width: 700px) {
+  .tablazat tbody tr,
+  .tablazat tbody tr:nth-child(even) {
+    display: block;
+    overflow: hidden;
+    background-color: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: 10px;
+    box-shadow: var(--shadow-small);
+  }
+
+  .tablazat tbody tr:hover {
+    background-color: var(--color-surface);
+    box-shadow: var(--shadow-medium);
+  }
+
+  .tablazat td,
+  .tablazat td:nth-child(3),
+  .tablazat td:nth-child(4),
+  .tablazat td:last-child {
+    display: grid;
+    grid-template-columns: minmax(7.5rem, 40%) minmax(0, 1fr);
+    gap: 0.75rem;
+    align-items: center;
+    width: 100%;
+    padding: 0.8rem 1rem;
+    font-size: 0.92rem;
+    text-align: right;
+  }
+
+  .tablazat td::before {
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: var(--color-text-muted);
+    text-align: left;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+  }
+
+  .tablazat td:nth-child(1)::before {
+    content: "Cím";
+  }
+
+  .tablazat td:nth-child(2)::before {
+    content: "Szerző";
+  }
+
+  .tablazat td:nth-child(3)::before {
+    content: "Ár";
+  }
+
+  .tablazat td:nth-child(4)::before {
+    content: "Darabszám";
+  }
+
+  .tablazat td:nth-child(5)::before {
+    content: "Művelet";
+  }
+
+  .tablazat tbody tr:last-child td:not(:last-child) {
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .tablazat td button {
+    justify-self: end;
+    min-height: 2.5rem;
+  }
+}
+
+@media (max-width: 380px) {
+  .tablazat td,
+  .tablazat td:nth-child(3),
+  .tablazat td:nth-child(4),
+  .tablazat td:last-child {
+    grid-template-columns: minmax(6.25rem, 40%) minmax(0, 1fr);
+    padding-inline: 0.75rem;
+  }
+}

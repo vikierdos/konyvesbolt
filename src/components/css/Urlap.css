@@ -1,0 +1,99 @@
+.urlap {
+  padding: clamp(1.25rem, 3vw, 2rem);
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-top: 4px solid var(--color-primary-light);
+  border-radius: 12px;
+  box-shadow: var(--shadow-medium);
+}
+
+.urlap form {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.25rem;
+  align-items: end;
+}
+
+.urlap .form-mezo {
+  display: grid;
+  min-width: 0;
+  gap: 0.45rem;
+}
+
+.urlap label {
+  font-size: 0.9rem;
+  font-weight: 700;
+  line-height: 1.35;
+  color: var(--color-primary-dark);
+}
+
+.urlap input:not([type="submit"]) {
+  width: 100%;
+  min-height: 2.75rem;
+  padding: 0.7rem 0.9rem;
+  color: var(--color-text);
+  background-color: #ffffff;
+  border: 1px solid #cdbcae;
+  border-radius: 7px;
+  outline: none;
+  transition: border-color 0.18s ease, box-shadow 0.18s ease, background-color 0.18s ease;
+}
+
+.urlap input:not([type="submit"]):hover {
+  border-color: var(--color-primary-light);
+}
+
+.urlap input:not([type="submit"]):focus {
+  background-color: #fffefa;
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 3px rgb(169 121 94 / 18%);
+}
+
+.urlap input[type="number"] {
+  font-variant-numeric: tabular-nums;
+}
+
+.urlap input[type="submit"] {
+  grid-column: 1 / -1;
+  justify-self: end;
+  min-width: 9rem;
+  min-height: 2.75rem;
+  padding: 0.7rem 1.25rem;
+  font-weight: 700;
+  color: #ffffff;
+  cursor: pointer;
+  background: linear-gradient(135deg, var(--color-primary), var(--color-primary-dark));
+  border: 0;
+  border-radius: 7px;
+  box-shadow: 0 4px 10px rgb(73 48 37 / 20%);
+  transition: box-shadow 0.18s ease, transform 0.18s ease;
+}
+
+.urlap input[type="submit"]:hover {
+  box-shadow: 0 7px 16px rgb(73 48 37 / 28%);
+  transform: translateY(-1px);
+}
+
+.urlap input[type="submit"]:active {
+  transform: translateY(0);
+}
+
+@media (max-width: 700px) {
+  .urlap form {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .urlap input[type="submit"] {
+    grid-column: auto;
+    justify-self: stretch;
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .urlap {
+    padding: 1rem;
+    border-radius: 9px;
+  }
+}
